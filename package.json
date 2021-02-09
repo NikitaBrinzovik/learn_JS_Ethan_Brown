@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "eslint": "^7.19.0",
+    "gulp-babel": "^8.0.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0"
+  }
+}
