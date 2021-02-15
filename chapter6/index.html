@@ -1,0 +1,55 @@
+<script>
+    
+    function getGreeting() {
+        return 'Hello world!';
+    }
+
+
+    const arr =[1, 2, 3];
+    arr[1] = getGreeting;
+    arr[1] ();
+    console.log(arr)
+    console.log(getGreeting())
+
+    function getSentence({ subject, verb, object }) {
+        return `${subject} ${verb} ${object}`;
+    }
+    const o = {
+        subject: 'I',
+        verb: 'love',
+        object: 'JavaScript',
+    }
+
+    console.log(o)
+    console.log(getSentence(o))
+
+    function getSentence2([ subject, verb, object ]) {
+    return `${subject} ${verb} ${object}`;
+    }
+
+    const arrr = [ 'I', 'love', 'JavaScript2' ];
+    console.log(getSentence2(arrr));
+
+    function addPrefix(prefix, ...words) {
+        //это не самый лучший способ
+        const prefixedWords = [];
+        for(let i=0; i<words.length; i++) {
+            prefixedWords[i] = prefix + words[i];
+            
+        }
+        console.log(prefixedWords)
+        return prefixedWords;
+        
+    }
+    addPrefix('con', 'verse', 'vex'); //'converse and convex
+    // console.log(addPrefix('con', 'verse', 'vex'));
+
+    const o4 = {
+        name: 'Wal',
+        speak() {return `My name is ${this.name}!`; },
+        
+    }
+    console.log(o4.speak());
+
+
+</script>
