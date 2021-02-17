@@ -60,12 +60,6 @@ const o3 = {
     bark() {return 'Woof!';},
 }
 
-//КЛЮЧЕВОЕ THIS
 
-const o4 = {
-    name: 'Wal',
-    speak() {return `My name is ${this.name}!`; },
-}
-o4.speak()
 
 
