@@ -1,0 +1,19 @@
+<script>
+    const bruce = { name: 'Bruce' };
+    const madeline = { name: 'Madeline' };
+    //this function doesn't touched with any object, but we use 'THIS'
+    function greet() {
+        return `Привет! Меня зовут ${this.name}!`;
+    }
+    greet() // ПРивет! меня зовут ! - this не привязана
+    greet.call(bruce) ; // привет! меня зовут Bruce - 'this'  привяз к брюс
+    console.log(greet.call(madeline)) ; // привет! меня зовут madeline - привяз madeline
+
+
+    function update(birthYear, occupation) {
+        this.birthYear = birthYear;
+        this.occupation = occupation;
+    }
+    console.log(update.call(bruce, 1949, 'singer'));
+    console.log(update.call(madeline, 1942, 'actress'));
+</script>
