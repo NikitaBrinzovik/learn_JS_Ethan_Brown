@@ -1,0 +1,71 @@
+<script>
+    let name = 'Irena';
+    let age = 25;
+    function greet() {console.log(`Hello! My name is ${name}`)};   
+    greet(); 
+    function getBirthYear() {
+        return new Date().getFullYear() - age;
+    }
+    console.log(getBirthYear());
+
+    let user = {
+        name: 'Irena',
+        age: 25,
+    };
+    function greeting() {
+        console.log(`Hello, my name is ${user.name}!`)
+    }
+    greeting();
+    function getBirthYears() {
+        return new Date().getFullYear() -user.age;
+    }
+    console.log(getBirthYears());
+
+    console.log('перед блоком');
+    {
+        console.log('внутри блока');
+        const x = 3;
+        console.log(x) //выводит 3 
+    }
+    //console.log(`за пределами блока; x=${x}`); //ReferenceError: х не определена
+
+    //Маскировка переменной
+    {
+        let x = 5;
+        console.log(x);
+        {
+            let x = 'blue';
+            console.log(x);
+        }
+        console.log(x);
+    }
+    //console.log(x); //будет ошибк4а
+
+    {
+        let x = {col: 'Green'};
+        let y = x;
+        let z = 4;
+        let p = z;
+        console.log(x.col);
+        console.log(y);
+        console.log(z);
+        console.log(p);
+        {
+            let x = 8;
+            let z = 'red';
+
+            console.log(x);
+            console.log(y.col);
+            console.log(z);
+            console.log(p);
+
+            y.col='black';
+            console.log(x);
+            console.log(y);
+        }
+        console.log(x);
+        console.log(y);
+        console.log(z);
+        console.log(p);
+    }
+</script>

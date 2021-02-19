@@ -1,0 +1,71 @@
+<script>
+    //closure-замкнутое выражение
+    let globalFunc;
+    {
+        let blockVar = 'a';
+        globalFunc = function() {
+            console.log(blockVar);
+        }
+    }
+    globalFunc();
+
+    let f;
+    {
+        let o = {note: 'Безопасно'};
+        f = function() {
+            return o;
+        }
+    }
+    let oRef = f();
+    console.log(oRef.note);
+    oRef.note = 'Всё же не совсем безопасно!';
+    console.log(oRef.note);
+
+    //IIFE
+    const message = (function() {
+        const secret = 'Здесь указан пароль!';
+        return `Пароль имеет длину ${secret.length} символов.`;
+    })();
+    console.log(message);
+
+    const u = (function() {
+        let count = 0;
+        return function() {
+            console.log(count + 1)
+            return console.log(`Меня вызывали ${++count} раз(a).`);
+        }
+    })();
+    u(); //раз(а)
+    u(); //Меня вызывали 2 раз(а)
+    //...
+
+    console.log(x); //undefined
+    var x; //поднято объявление но не присвоение
+    console.log(x); //undefined
+    x = 3;
+    console.log(x); // 3
+    
+    if( q != 3) {
+        console.log(y);
+        var y = 5;
+        if(y === 5 ) {
+            var q = 3;
+        }
+        console.log(y);
+    }
+    if (q === 3) {
+        console.log(y);
+    }
+
+    var z = 3;
+    if (z === 3) {
+        var z = 2;
+        console.log(z);
+    }
+    console.log(z);
+
+    e(); //выводит функцию e: 'f'
+    function e() {
+        console.log('f')
+    }
+</script>
