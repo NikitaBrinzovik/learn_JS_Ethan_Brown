@@ -1,9 +1,29 @@
 <script>
     const o = {name: 'jerry'};
-    const arr = [1, 5, 'a', o, true, 5, [1, 2], '9'];
-    console.log(arr.indexOf('a', 5));          //возвращает -1
-    console.log(arr.indexOf(5, 5));            //возвращает 5
-    console.log(arr.lastIndexOf(5, 4));        //возвращает 1
+    const arr99 = [1, 5, 'a', o, true, 5, [1, 2], '9'];
+    console.log(arr99.indexOf('a', 5));          //возвращает -1
+    console.log(arr99.indexOf(5, 5));            //возвращает 5
+    console.log(arr99.lastIndexOf(5, 4));        //возвращает 1
 
+    class Person {
+        constructor(name) {
+            this.name = name;
+            this.id = Person.nextId++;
+        }
+    }
+    Person.nextId = 0;
+    const jamie = new Person('Jamie'),
+        juliet = new Person('Juliet'),
+        peter = new Person('Peter'),
+        jay = new Person ('Jay');
+    const arr = [jamie, juliet, peter, jay];
+    //возможность1: прямое сравнение идентификатора:
+    console.log(arr.find(p=> p.id === juliet.id)); //возвращает объект juliet
+    //возможность 2: использование аргумента 'this':
+    console.log(arr.find(p => p.id === this.id, juliet)); //возвращает undefine, a ne объект juliet
     
+    const items1 = ["Widget", "Gadget"];
+    const prices1 = [9.95, 22.95];
+    const cart1 = items1.map((x, i) => ({ name: x, price: prices1[i]}));
+    console.log(cart1);
 </script>
